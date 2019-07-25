@@ -90,7 +90,7 @@ export default {
     // 根据属性，合成表单验证装饰器
     decorator() {
       if (this.decoratorOptions) {
-        const newOptions = JSON.parse(JSON.stringify(this.decoratorOptions));
+        const newOptions = this.decoratorOptions;
         newOptions.initialValue = this.value;
         const itemDecorator = ['formName'];
         itemDecorator.push(newOptions);
