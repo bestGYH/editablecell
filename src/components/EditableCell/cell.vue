@@ -96,8 +96,10 @@
       decorator: {
         get() {
           if (this.decoratorOptions) {
-            const newOptions = this.decoratorOptions;
-            newOptions.initialValue = this.value;
+            const newOptions = {
+              initialValue: this.value,
+              ...this.decoratorOptions,
+            };
             const itemDecorator = ['formName'];
             itemDecorator.push(newOptions);
             return itemDecorator;
