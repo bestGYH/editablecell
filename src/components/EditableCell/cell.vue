@@ -96,18 +96,15 @@
       decorator: {
         get() {
           if (this.decoratorOptions) {
-            const newOptions = {
+            const itemDecorator = ['formName', {
               initialValue: this.value,
               ...this.decoratorOptions,
-            };
-            const itemDecorator = ['formName'];
-            itemDecorator.push(newOptions);
+            }];
             return itemDecorator;
           }
-          const itemDecorator = ['formName'];
-          const options = {};
-          options.initialValue = this.value;
-          itemDecorator.push(options);
+          const itemDecorator = ['formName', {
+            initialValue: this.value,
+          }];
           return itemDecorator;
         },
         set(value) {
